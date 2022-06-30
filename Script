@@ -41,7 +41,7 @@ dfs = pd.read_html(html_data)
 gme_revenue=dfs[1]
 gme_revenue.columns = ["Date","Revenue"] #rename the columns
 gme_revenue.reset_index(inplace=True) 
-gme_revenue["Revenue"] = tesla_revenue['Revenue'].str.replace(',|\$',"") # remove comma and dollar sign
+gme_revenue["Revenue"] = gme_revenue['Revenue'].str.replace(',|\$',"") # remove comma and dollar sign
 gme_revenue.dropna(inplace=True) #remove empty or null strings in Revenue column
 
 gme_revenue = tesla_revenue[tesla_revenue['Revenue'] != ""]
