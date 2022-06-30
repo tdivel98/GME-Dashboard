@@ -44,5 +44,5 @@ gme_revenue.reset_index(inplace=True)
 gme_revenue["Revenue"] = gme_revenue['Revenue'].str.replace(',|\$',"") # remove comma and dollar sign
 gme_revenue.dropna(inplace=True) #remove empty or null strings in Revenue column
 
-gme_revenue = tesla_revenue[tesla_revenue['Revenue'] != ""]
+gme_revenue = gme_revenue[gme_revenue['Revenue'] != ""]
 make_graph(gme_data,gme_revenue,"Gamestop")
